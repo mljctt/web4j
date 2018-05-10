@@ -15,11 +15,11 @@ Example:
          web4j del user User                Delete all the module files.
 ```
 
-在项目根目录下创建配置文件 `web4j.json`,读取包名:
+在项目根目录下创建配置文件 `web4j.json`,用于读取包名:
 
 ```json
 {
-    "pkgName": "com.marvin"
+    "pkgName": "com.marvin.springboot"
 }
 ```
 

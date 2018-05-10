@@ -6,7 +6,7 @@ import $pkgName.framework.Result;
 import $pkgName.framework.ResultUtil;
 import $pkgName.service.$mpkgName.$mNameService;
 import $pkgName.vo.input.$mpkgName.InputUpdate$mNameVO;
-import $pkgName.vo.output.Output$mNameListVO;
+import $pkgName.vo.output.$mpkgName.Output$mNameListVO;
 import $pkgName.entity.$mpkgName.$mName;
 import $pkgName.vo.input.$mpkgName.Input$mNameListVO;
 import org.slf4j.Logger;

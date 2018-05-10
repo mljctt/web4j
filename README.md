@@ -22,5 +22,3 @@ Example:
     "pkgName": "com.marvin.springboot"
 }
 ```
-
-如果配置了包名,则可以直接使用:  `web4j new User`

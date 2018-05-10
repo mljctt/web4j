@@ -1,50 +1,18 @@
 {
-    "_from": "web4j",
-    "_id": "web4j@1.0.1",
-    "_inBundle": false,
-    "_integrity": "sha512-ZQWQcpCwsSLV80Hjjw2wmgdVCHCnYcXXnOZCGekE6wRLQTfL4BirOoswYNnco99lzt8d/AgIKhBh0+waU9cKCg==",
-    "_location": "/web4j",
-    "_phantomChildren": {},
-    "_requested": {
-        "type": "tag",
-        "registry": true,
-        "raw": "web4j",
-        "name": "web4j",
-        "escapedName": "web4j",
-        "rawSpec": "",
-        "saveSpec": null,
-        "fetchSpec": "latest"
-    },
-    "_requiredBy": [
-        "#USER"
-    ],
-    "_resolved": "https://registry.npmjs.org/web4j/-/web4j-1.0.0.tgz",
-    "_shasum": "ce0a3cbfdc56689cbc1a002cb09120eb51d17c9d",
-    "_spec": "web4j",
-    "_where": "/Users/wenyuan/git",
-    "author": {
-        "name": "marvin",
-        "email": "731010648@qq.com"
-    },
-    "bin": {
-        "web4j": "index.js"
-    },
-    "bugs": {
-        "url": "https://github.com/mljctt/web4j/issues"
-    },
-    "bundleDependencies": false,
-    "deprecated": false,
-    "description": "Scaffold for Spring Boot.",
-    "homepage": "https://github.com/mljctt/web4j",
-    "license": "ISC",
-    "main": "index.js",
     "name": "web4j",
+    "version": "3.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/mljctt/web4j.git"
     },
-    "scripts": {
-        "start": "node index.js"
+    "bin": {
+        "web4j": "index.js"
     },
-    "version": "1.0.0"
+    "author": "marvin <731010648@qq.com>",
+    "license": "ISC"
 }

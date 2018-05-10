@@ -50,6 +50,16 @@ try {
     process.exit(2);
 }
 
+if (!mpkgName) {
+    console.error(`---> Module Package Can't be Empty!`);
+    process.exit(2);
+}
+
+if (!mName) {
+    console.error(`---> Module Name Can't be Empty!`);
+    process.exit(2);
+}
+
 mName = mName.firstUpperCase();
 entity = mName.firstLowerCase();
 urlName = mName.snakeStr('-');
@@ -59,7 +69,7 @@ switch (operation) {
         createModule();
         break;
     case 'del':
-        deleteModule(pkgName, mName);
+        deleteModule();
         break;
     default:
         usageInfo();
@@ -71,7 +81,7 @@ function usageInfo() {
     console.log(usage);
 }
 
-async function createModule(pkgName, mpkgName, mName) {
+async function createModule() {
     await createVO();
     await createDao();
     await createService();

@@ -369,6 +369,14 @@ async function deleteModule() {
             resolve();
         });
     });
+    // 3.delete vo_add
+    await new Promise((resolve, reject) => {
+        fs.unlink(path.join(pwd, 'src', 'main', 'java', pkgPath, 'vo', 'input', mpkgName, 'InputAdd' + mName + 'VO.java'), (err) => { // asynchronous delete
+            if (err != null)
+                console.error(err);
+            resolve();
+        });
+    });
     // 3.delete vo_outlist
     await new Promise((resolve, reject) => {
         fs.unlink(path.join(pwd, 'src', 'main', 'java', pkgPath, 'vo', 'output', mpkgName, 'Output' + mName + 'ListVO.java'), (err) => { // asynchronous delete

@@ -3,6 +3,7 @@ module.exports = `package $pkgName.controller.$mpkgName;
 import $pkgName.controller.BaseController;
 import $pkgName.service.$mpkgName.$mNameService;
 import $pkgName.vo.input.$mpkgName.InputUpdate$mNameVO;
+import $pkgName.vo.input.$mpkgName.InputAdd$mNameVO;
 import $pkgName.framework.GlobalException;
 import $pkgName.framework.Result;
 import $pkgName.framework.ResultCode;
@@ -59,8 +60,8 @@ public class $mNameController extends BaseController {
     @ApiOperation(value = "新增$desc", response = Result.class)
     @PostMapping
     @Profiled
-    public Result insert(@RequestBody InputUpdate$mNameVO inputUpdate$mNameVO) {
-        return $entityService.insert(inputUpdate$mNameVO);
+    public Result insert(@RequestBody InputAdd$mNameVO inputAdd$mNameVO) {
+        return $entityService.insert(inputAdd$mNameVO);
     }
 
 }

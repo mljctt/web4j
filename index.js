@@ -178,6 +178,36 @@ async function createVO() {
             })
         }
     });
+
+    // 4.create vo_add
+    await new Promise((resolve, reject) => {
+        let voAdd = tpl.voAdd.replace(/\$pkgName/g, pkgName)
+            .replace(/\$createAt/g, new Date())
+            .replace(/\$mName/g, mName)
+            .replace(/\$mpkgName/g, mpkgName);
+        let pkgPath = ""
+        pkgName.split('.').forEach((v) => { pkgPath += v + '/' });
+        let dir = path.join(pwd, 'src', 'main', 'java', pkgPath, 'vo', 'input', mpkgName);
+        let file = path.join(dir, 'InputAdd' + mName + 'VO.java');
+        var exist = fs.existsSync(dir);
+        if (!exist) {
+            fs.mkdir(dir, (err) => {
+                if (err)
+                    throw err;
+                fs.writeFile(file, voAdd, (err) => {
+                    if (err)
+                        throw err;
+                    resolve();
+                })
+            });
+        } else {
+            fs.writeFile(file, voAdd, (err) => {
+                if (err)
+                    throw err;
+                resolve();
+            })
+        }
+    });
     console.log(` ---> Create VO\tsuccess...`);
 }
 

@@ -2,6 +2,7 @@ module.exports = `package $pkgName.service.$mpkgName;
 
 import $pkgName.framework.Result;
 import $pkgName.vo.input.$mpkgName.InputUpdate$mNameVO;
+import $pkgName.vo.input.$mpkgName.InputAdd$mNameVO;
 import $pkgName.vo.input.$mpkgName.Input$mNameListVO;
 
 /**
@@ -17,6 +18,6 @@ public interface $mNameService {
 
     Result updateById(InputUpdate$mNameVO inputUpdate$mNameVO);
 
-    Result insert(InputUpdate$mNameVO inputUpdate$mNameVO);
+    Result insert(InputAdd$mNameVO inputAdd$mNameVO);
 }
 `

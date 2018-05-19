@@ -8,6 +8,7 @@ import $pkgName.service.$mpkgName.$mNameService;
 import $pkgName.vo.input.$mpkgName.InputUpdate$mNameVO;
 import $pkgName.vo.input.$mpkgName.InputAdd$mNameVO;
 import $pkgName.vo.output.$mpkgName.Output$mNameListVO;
+import $pkgName.vo.output.$mpkgName.Output$mNameDetailVO;
 import $pkgName.entity.$mpkgName.$mName;
 import $pkgName.vo.input.$mpkgName.Input$mNameListVO;
 import org.slf4j.Logger;
@@ -30,7 +31,7 @@ public class $mNameServiceImpl implements $mNameService {
     @Override
     public Result findById(Integer id) {
         $mName $entity = $entityDao.selectByKey(id);
-        return ResultUtil.success($entity, Output$mNameListVO.class);
+        return ResultUtil.success($entity, Output$mNameDetailVO.class);
     }
 
     @Override

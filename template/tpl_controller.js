@@ -9,6 +9,7 @@ import $pkgName.framework.Result;
 import $pkgName.framework.ResultCode;
 import $pkgName.vo.input.$mpkgName.Input$mNameListVO;
 import $pkgName.vo.output.$mpkgName.Output$mNameListVO;
+import $pkgName.vo.output.$mpkgName.Output$mNameDetailVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.perf4j.aop.Profiled;
@@ -33,7 +34,7 @@ public class $mNameController extends BaseController {
         return $entityService.findByPage(input$mNameListVO);
     }
 
-    @ApiOperation(value = "$desc详情", response = Output$mNameListVO.class)
+    @ApiOperation(value = "$desc详情", response = Output$mNameDetailVO.class)
     @GetMapping("/{id}")
     @Profiled
     public Result detail(@PathVariable int id) {

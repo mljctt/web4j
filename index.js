@@ -149,6 +149,36 @@ async function createVO() {
         }
     });
 
+    // 3.create vo_outdetail
+    await new Promise((resolve, reject) => {
+        let voOutDetail = tpl.voOutDetail.replace(/\$pkgName/g, pkgName)
+            .replace(/\$createAt/g, new Date())
+            .replace(/\$mName/g, mName)
+            .replace(/\$mpkgName/g, mpkgName);
+        let pkgPath = ""
+        pkgName.split('.').forEach((v) => { pkgPath += v + '/' });
+        let dir = path.join(pwd, 'src', 'main', 'java', pkgPath, 'vo', 'output', mpkgName);
+        let file = path.join(dir, 'Output' + mName + 'DetailVO.java');
+        var exist = fs.existsSync(dir);
+        if (!exist) {
+            fs.mkdir(dir, (err) => {
+                if (err)
+                    throw err;
+                fs.writeFile(file, voOutDetail, (err) => {
+                    if (err)
+                        throw err;
+                    resolve();
+                })
+            });
+        } else {
+            fs.writeFile(file, voOutDetail, (err) => {
+                if (err)
+                    throw err;
+                resolve();
+            })
+        }
+    });
+
     // 3.create vo_update
     await new Promise((resolve, reject) => {
         let voUpdate = tpl.voUpdate.replace(/\$pkgName/g, pkgName)
@@ -380,6 +410,14 @@ async function deleteModule() {
     // 3.delete vo_outlist
     await new Promise((resolve, reject) => {
         fs.unlink(path.join(pwd, 'src', 'main', 'java', pkgPath, 'vo', 'output', mpkgName, 'Output' + mName + 'ListVO.java'), (err) => { // asynchronous delete
+            if (err != null)
+                console.error(err);
+            resolve();
+        });
+    });
+    // 3.delete vo_outdetail
+    await new Promise((resolve, reject) => {
+        fs.unlink(path.join(pwd, 'src', 'main', 'java', pkgPath, 'vo', 'output', mpkgName, 'Output' + mName + 'DetailVO.java'), (err) => { // asynchronous delete
             if (err != null)
                 console.error(err);
             resolve();

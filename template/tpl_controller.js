@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 @Api(value = "$urlName", description = "$desc")
 @RestController
 @RequestMapping("/$urlName")
+@CrossOrigin
 public class $mNameController extends BaseController {
 
     @Autowired

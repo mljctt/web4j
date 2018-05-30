@@ -29,26 +29,26 @@ public class $mNameServiceImpl implements $mNameService {
     private $mNameDao $entityDao;
 
     @Override
-    public Result findById(Integer id) {
+    public Result findById(Integer id) throws GlobalException {
         $mName $entity = $entityDao.selectByKey(id);
         return ResultUtil.success($entity, Output$mNameDetailVO.class);
     }
 
     @Override
-    public Result findByPage(Input$mNameListVO input$mNameListVO) {
+    public Result findByPage(Input$mNameListVO input$mNameListVO) throws GlobalException {
         Page<$mName> page = $entityDao.findByPage(input$mNameListVO);
         return ResultUtil.successPage(page.getResult(), Output$mNameListVO.class, page.getTotal());
     }
 
 
     @Override
-    public Result deleteById(Integer id) {
+    public Result deleteById(Integer id) throws GlobalException {
         $entityDao.deleteById(id);
         return ResultUtil.success();
     }
 
     @Override
-    public Result updateById(InputUpdate$mNameVO inputUpdate$mNameVO) {
+    public Result updateById(InputUpdate$mNameVO inputUpdate$mNameVO) throws GlobalException {
         $mName $entity = new $mName();
         BeanUtils.copyProperties(inputUpdate$mNameVO, $entity);
         $entityDao.updateById($entity);
@@ -56,7 +56,7 @@ public class $mNameServiceImpl implements $mNameService {
     }
 
     @Override
-    public Result insert(InputAdd$mNameVO inputAdd$mNameVO) {
+    public Result insert(InputAdd$mNameVO inputAdd$mNameVO) throws GlobalException {
         $mName $entity = new $mName();
         BeanUtils.copyProperties(inputAdd$mNameVO, $entity);
         $entityDao.insert($entity);

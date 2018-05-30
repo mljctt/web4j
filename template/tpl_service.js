@@ -10,14 +10,14 @@ import $pkgName.vo.input.$mpkgName.Input$mNameListVO;
  */
 public interface $mNameService {
 
-    Result findById(Integer id);
+    Result findById(Integer id) throws GlobalException;
 
-    Result findByPage(Input$mNameListVO input$mNameListVO);
+    Result findByPage(Input$mNameListVO input$mNameListVO) throws GlobalException;
 
-    Result deleteById(Integer id);
+    Result deleteById(Integer id) throws GlobalException;
 
-    Result updateById(InputUpdate$mNameVO inputUpdate$mNameVO);
+    Result updateById(InputUpdate$mNameVO inputUpdate$mNameVO) throws GlobalException;
 
-    Result insert(InputAdd$mNameVO inputAdd$mNameVO);
+    Result insert(InputAdd$mNameVO inputAdd$mNameVO) throws GlobalException;
 }
 `

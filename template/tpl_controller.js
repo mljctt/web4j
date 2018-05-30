@@ -31,21 +31,21 @@ public class $mNameController extends BaseController {
     @ApiOperation(value = "查询$desc", response = Output$mNameListVO.class)
     @GetMapping("")
     @Profiled
-    public Result list(@ModelAttribute Input$mNameListVO input$mNameListVO) {
+    public Result list(@ModelAttribute Input$mNameListVO input$mNameListVO) throws GlobalException {
         return $entityService.findByPage(input$mNameListVO);
     }
 
     @ApiOperation(value = "$desc详情", response = Output$mNameDetailVO.class)
     @GetMapping("/{id}")
     @Profiled
-    public Result detail(@PathVariable int id) {
+    public Result detail(@PathVariable int id) throws GlobalException {
         return $entityService.findById(id);
     }
 
     @ApiOperation(value = "删除$desc", response = Result.class)
     @DeleteMapping("/{id}")
     @Profiled
-    public Result delete(@PathVariable int id) {
+    public Result delete(@PathVariable int id) throws GlobalException {
         return $entityService.deleteById(id);
     }
 
@@ -62,7 +62,7 @@ public class $mNameController extends BaseController {
     @ApiOperation(value = "新增$desc", response = Result.class)
     @PostMapping
     @Profiled
-    public Result insert(@RequestBody InputAdd$mNameVO inputAdd$mNameVO) {
+    public Result insert(@RequestBody InputAdd$mNameVO inputAdd$mNameVO) throws GlobalException {
         return $entityService.insert(inputAdd$mNameVO);
     }
 

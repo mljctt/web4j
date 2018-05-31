@@ -30,7 +30,7 @@ public class $mNameServiceImpl implements $mNameService {
 
     @Override
     public Result findById(Integer id) throws GlobalException {
-        $mName $entity = $entityDao.selectByKey(id);
+        $mName $entity = $entityDao.findById(id);
         return ResultUtil.success($entity, Output$mNameDetailVO.class);
     }
 

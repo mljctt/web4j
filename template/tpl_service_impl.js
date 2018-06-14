@@ -1,5 +1,6 @@
 module.exports = `package $pkgName.service.$mpkgName.impl;
 
+import $pkgName.framework.GlobalException;
 import com.github.pagehelper.Page;
 import $pkgName.dao.$mpkgName.$mNameDao;
 import $pkgName.framework.Result;

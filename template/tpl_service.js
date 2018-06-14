@@ -1,5 +1,6 @@
 module.exports = `package $pkgName.service.$mpkgName;
 
+import $pkgName.framework.GlobalException;
 import $pkgName.framework.Result;
 import $pkgName.vo.input.$mpkgName.InputUpdate$mNameVO;
 import $pkgName.vo.input.$mpkgName.InputAdd$mNameVO;

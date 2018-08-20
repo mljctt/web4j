@@ -21,6 +21,7 @@ public class $mNameDao extends BaseDao<$mName> {
 
     public Page<$mName> findByPage(Input$mNameListVO input$mNameListVO) {
         Example example = new Example($mName.class);
+        example.setOrderByClause("id desc");
         //        Example.Criteria criteria = example.createCriteria();
         //分页查询
         PageHelper.startPage(input$mNameListVO.getPageNo(), input$mNameListVO.getPageSize());
